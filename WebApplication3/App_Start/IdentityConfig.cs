@@ -32,7 +32,7 @@ namespace WebApplication3
         {
             var smtp = new SmtpClient("smtp.gmail.com", 587);
 
-            var creds = new NetworkCredential("user@gmail.com", "pwd");//maid n password
+            var creds = new NetworkCredential("user@gmail.com", "pwd"); //maid n password
 
             smtp.UseDefaultCredentials = false;
             smtp.Credentials = creds;
@@ -72,7 +72,7 @@ namespace WebApplication3
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
             // Configure validation logic for usernames
@@ -113,7 +113,7 @@ namespace WebApplication3
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
+                manager.UserTokenProvider =
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
