@@ -32,7 +32,7 @@ namespace WebApplication3
         {
             var smtp = new SmtpClient("smtp.gmail.com", 587);
 
-            var creds = new NetworkCredential("aspdotnetmvcnaresh@gmail.com", "choulla1234");
+            var creds = new NetworkCredential("user@gmail.com", "pwd");//maid n password
 
             smtp.UseDefaultCredentials = false;
             smtp.Credentials = creds;
